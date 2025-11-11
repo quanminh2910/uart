@@ -16,6 +16,7 @@
 #include "xparameters.h"
 #include "xstatus.h"
 #include "xil_printf.h"
+#include "xil_types.h"
 #include "sleep.h"
 #include "usb_to_uart.h"
 
@@ -322,7 +323,7 @@ void ReceiveDataTest(void)
         usleep(1000);
     }
     
-    sprintf(SendBuffer, "\r\nReceived %lu bytes total.\r\n", TotalReceived);
+    sprintf(SendBuffer, "\r\nReceived %d bytes total.\r\n", (int)TotalReceived);
     XUartPs_Send(&UartPs, (u8*)SendBuffer, strlen(SendBuffer));
     
     const char* complete_msg = "Receive test completed.\r\n";
@@ -413,13 +414,14 @@ void DisplayBridgeStatistics(void)
     
     sprintf(SendBuffer, 
            "\r\n=== USB-UART Bridge Statistics ===\r\n"
-           "Bytes Transmitted: %lu\r\n"
-           "Bytes Received: %lu\r\n"
-           "Error Count: %lu\r\n"
-           "RX Data Available: %lu bytes\r\n"
-           "TX Space Available: %lu bytes\r\n"
+           "Bytes Transmitted: %d\r\n"
+           "Bytes Received: %d\r\n"
+           "Error Count: %d\r\n"
+           "RX Data Available: %d bytes\r\n"
+           "TX Space Available: %d bytes\r\n"
            "===================================\r\n",
-           tx_count, rx_count, error_count, data_available, tx_space);
+           (int)tx_count, (int)rx_count, (int)error_count, 
+           (int)data_available, (int)tx_space);
            
     XUartPs_Send(&UartPs, (u8*)SendBuffer, strlen(SendBuffer));
 }
