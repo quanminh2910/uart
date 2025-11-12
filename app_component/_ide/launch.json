@@ -28,25 +28,25 @@
           "psDevice": "Auto Detect"
         },
         "resetAPU": true,
-        "bitstreamFile": "${workspaceFolder}\\app_component\\_ide\\bitstream\\artyz7_20_platform.bit",
+        "bitstreamFile": "C:\\Users\\User\\Desktop\\main\\vitiswork\\app_component\\_ide\\bitstream\\artyz7_20_platform.bit",
         "zynqInitialization": {
           "isFsbl": false,
           "usingFSBL": {
             "initWithFSBL": true,
-            "fsblFile": "${workspaceFolder}\\ARTY\\zynq_fsbl\\build\\fsbl.elf",
+            "fsblFile": "C:\\Users\\User\\Desktop\\main\\vitiswork\\ARTY\\zynq_fsbl\\build\\fsbl.elf",
             "fsblExitSymbol": "FsblHandoffJtagExit"
           },
           "usingPs7Init": {
             "runPs7Init": true,
             "runPs7PostInit": true,
-            "ps7InitTclFile": "${workspaceFolder}\\app_component\\_ide\\psinit\\ps7_init.tcl"
+            "ps7InitTclFile": "C:\\Users\\User\\Desktop\\main\\vitiswork\\app_component\\_ide\\psinit\\ps7_init.tcl"
           }
         },
         "downloadElf": [
           {
             "core": "ps7_cortexa9_0",
             "resetProcessor": true,
-            "elfFile": "${workspaceFolder}\\app_component\\build\\app_component.elf",
+            "elfFile": "C:\\Users\\User\\Desktop\\main\\vitiswork\\app_component\\build\\app_component.elf",
             "stopAtEntry": true,
             "isSelfRelocatingApp": false,
             "relativeAddress": ""
